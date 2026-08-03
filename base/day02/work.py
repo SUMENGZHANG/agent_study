@@ -27,21 +27,39 @@ user = {
 # TODO: 写按 type 筛选的函数
 labels = []
 for i in user.keys():
-    labels.append({"name":i,"type":"string","description":user[i]})
+    value = user[i]
+    if isinstance(value, str):
+        type_name = "string"
+    elif isinstance(value, int):
+        type_name = "int"
+    elif isinstance(value, float):
+        type_name = "float"
+    else:
+        type_name = "unknown"
+    labels.append({"name": i, "type": type_name, "description": str(value)})
+
+
+def filter_by_type(label_type: str) -> None:
+    print(f"类型为 '{label_type}' 的标签：")
+    for index, label in enumerate(labels, start=1):
+        if label.get("type") == label_type:
+            name = label.get("name", "未知")
+            description = label.get("description", "无描述")
+            print(f"{index}. {name}: {description}")
+
 
 # TODO: 写按 name 查找的函数
 
-def read_by_name(name:str)-> Any | None:
+def read_by_name(name: str) -> Any | None:
     for label in labels:
-        if label["name"] == name:
+        if label.get("name") == name:
             return label
     return None
 
+
 # TODO: 用推导式生成 name 列表
 
-names = [label["name"] for label in labels]
-
-
+names = [label.get("name") for label in labels]
 
 '''
 作业 2：数据分析小练习（必做）
@@ -69,16 +87,22 @@ average_score = sum(scores) / len(scores)
 
 # TODO: 4. 用推导式生成 dict：{索引: 成绩}，只包含及格（>=60）的成绩
 scores_dict = {index:score for index, score in enumerate(scores) if score >= 60}
+scores_dict = {index: score for index, score in enumerate(scores) if score >= 60}
 # TODO: 5. 将成绩转为 set 去重，再转回 list 排序
 scores_set = set(scores)
 
 scores_list = list(scores_set)
+scores_list.sort()
+
 '''
 作业 3：思考题（选做）
 
 不看代码，口述以下问题（10 分钟）：
 
 1. list 和 tuple 有什么区别？什么时候该用哪个？
+list是列表，tuple是元祖吧，元祖不可变
 2. dict 的 key 为什么必须是不可变类型？（提示：哈希）
+key是用来作hash的
 3. Python 的 set 和 Java 的 HashSet 在底层实现上有什么共同点？
+底层都是用hashTable实现的
 '''

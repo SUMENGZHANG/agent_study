@@ -1,0 +1,8 @@
+{
+  "message": "Hello JSON",
+  "numbers": [
+    1,
+    2,
+    3
+  ]
+}

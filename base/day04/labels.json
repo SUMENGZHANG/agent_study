@@ -1,0 +1,54 @@
+[
+  {
+    "name": "high_value_user",
+    "display_name": "高价值用户",
+    "type": "behavior",
+    "conditions": [
+      {"field": "total_order_amount", "op": ">=", "value": 10000},
+      {"field": "order_count", "op": ">=", "value": 5}
+    ],
+    "metadata": {
+      "created_by": "marketing_team",
+      "version": "1.0",
+      "is_active": true
+    }
+  },
+  {
+    "name": "new_user",
+    "display_name": "新注册用户",
+    "type": "attribute",
+    "conditions": [
+      {"field": "register_days", "op": "<=", "value": 30}
+    ],
+    "metadata": {
+      "created_by": "growth_team",
+      "version": "1.0",
+      "is_active": true
+    }
+  },
+  {
+    "name": "inactive_user",
+    "display_name": "沉默用户",
+    "type": "behavior",
+    "conditions": [
+      {"field": "last_login_days", "op": ">=", "value": 30},
+      {"field": "order_count_30d", "op": "==", "value": 0}
+    ],
+    "metadata": {
+      "created_by": "retention_team",
+      "version": "2.0",
+      "is_active": false
+    }
+  },
+  {
+    "name": "missing_type_label",
+    "display_name": "缺少type字段的标签",
+    "conditions": [
+      {"field": "age", "op": ">=", "value": 18}
+    ]
+  },
+  {
+    "name": "incomplete_label",
+    "display_name": "不完整标签"
+  }
+]
