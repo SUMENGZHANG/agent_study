@@ -1,0 +1,15 @@
+1. 源码里第一步是做query rewrite,这是必须的吗？rewrite的优劣和实现方式是什么？
+2. LlamaIndex 介绍和作用
+3. Qgrant的介绍和作用
+4. AliyunEmbedding embedding的作用
+5. 我对python的线程和并发一无所知：
+    def add_conditional_edges(
+        self,
+        source: str,
+        path: Callable[..., Hashable | Sequence[Hashable]]
+        | Callable[..., Awaitable[Hashable | Sequence[Hashable]]]
+        | Runnable[Any, Hashable | Sequence[Hashable]],
+        path_map: dict[Hashable, str] | list[str] | None = None,
+    )  这代码总的Callable Runnable Sequence这些我都需要了解下
+
+
