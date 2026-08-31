@@ -2,4 +2,8 @@
 name = "agent-study"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "langchain-core==0.3.83",
+    "langgraph==0.6.11",
+    "pydantic==2.13.4",
+]

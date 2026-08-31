@@ -4,10 +4,11 @@
 
 ## 第一阶段：看懂固定工作流
 
-- [ ] 第 1 课：Agent、LLM 应用和普通后端程序的区别
-- [ ] 第 2 课：LangGraph 的 State、Node、Edge 与 Router
-- [ ] 第 3 课：跟踪 `es-ai master` 的完整圈人调用链
-- [ ] 第 4 课：结构化输出与 JSON/DSL 校验
+- [x] 第 1 课：Agent、LLM 应用和普通后端程序的区别
+- [x] 第 2 课：LangGraph 的 State、Node、Edge 与 Router
+- [x] 第 3 课：实现第一个真正的 LangGraph
+- [x] 第 4 课：跟踪 `es-ai master` 的完整圈人调用链
+- [ ] 第 5 课：结构化输出与 JSON/DSL 校验
 - [ ] 阶段练习：实现一个不调用外部模型的最小圈人工作流
 
 完成标准：可以自己画出 `master` 的 Graph，并解释一次请求中 State 如何变化。
